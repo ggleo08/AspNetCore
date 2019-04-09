@@ -10,7 +10,7 @@ namespace BenchmarkServer.Hubs
 {
     public class EchoHub : Hub
     {
-        int connectionCount = 0;
+        static int connectionCount = 0;
         public async Task Broadcast(int duration)
         {
             var sent = 0;
