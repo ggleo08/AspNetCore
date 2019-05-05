@@ -9,14 +9,6 @@
   </ItemGroup>
 
   <!-- These references are used when running locally -->
-  <ItemGroup Condition="'$(BenchmarksTargetFramework)' == ''">
-    <Reference Include="Microsoft.AspNetCore.SignalR" />
-    <Reference Include="Microsoft.AspNetCore.SignalR.Protocols.MessagePack" />
-    <Reference Include="Microsoft.AspNetCore.SignalR.StackExchangeRedis" />
-    <Reference Include="Microsoft.AspNetCore.Server.Kestrel" />
-    <Reference Include="Microsoft.Extensions.Configuration.CommandLine" />
-    <Reference Include="Microsoft.Extensions.Logging.Console" />
-  </ItemGroup>
 
   <!-- These references are used when running on the Benchmarks Server -->
   <ItemGroup Condition="'$(BenchmarksTargetFramework)' != ''">
@@ -25,6 +17,10 @@
 
     <FrameworkReference Update="Microsoft.AspNetCore.App" RuntimeFrameworkVersion="$(MicrosoftAspNetCoreAppPackageVersion)" />
     <FrameworkReference Update="Microsoft.NETCore.App" RuntimeFrameworkVersion="$(MicrosoftNETCoreAppPackageVersion)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\common\Protocols.MessagePack\src\Microsoft.AspNetCore.SignalR.Protocols.MessagePack.csproj" />
+    <ProjectReference Include="..\..\..\server\StackExchangeRedis\src\Microsoft.AspNetCore.SignalR.StackExchangeRedis.csproj" />
   </ItemGroup>
 
 </Project>
