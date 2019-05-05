@@ -10,6 +10,13 @@ namespace BenchmarkServer.Hubs
 {
     public class EchoHub : Hub
     {
+        private EchoHubConnectionCounter _counter;
+
+        public EchoHub(EchoHubConnectionCounter counter)
+        {
+            _counter = counter;
+        }
+
         public async Task Broadcast(int duration)
         {
             var sent = 0;
@@ -28,6 +35,17 @@ namespace BenchmarkServer.Hubs
                 Console.WriteLine(e);
             }
             Console.WriteLine("Broadcast exited: Sent {0} messages", sent);
+        }
+
+        public override Task OnConnectedAsync()
+        {
+            _counter?.Connected();
+            return Task.CompletedTask;
+        }
+
+        public override Task OnDisconnectedAsync(Exception exception) {
+            _counter?.Disconnected();
+            return Task.CompletedTask;
         }
 
         public DateTime Echo(DateTime time)
