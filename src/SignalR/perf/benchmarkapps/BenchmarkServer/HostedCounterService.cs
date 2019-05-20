@@ -59,7 +59,7 @@ namespace BenchmarkServer
 
         public Task StopAsync(CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
