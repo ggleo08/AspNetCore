@@ -10,9 +10,9 @@ namespace BenchmarkServer.Hubs
 {
     public class EchoHub : Hub
     {
-        private EchoHubConnectionCounter _counter;
+        private ConnectionCounter _counter;
 
-        public EchoHub(EchoHubConnectionCounter counter)
+        public EchoHub(ConnectionCounter counter)
         {
             _counter = counter;
         }

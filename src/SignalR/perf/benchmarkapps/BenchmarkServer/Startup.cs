@@ -32,7 +32,9 @@ namespace BenchmarkServer
                 signalrBuilder.AddStackExchangeRedis(redisConnectionString);
             }
 
-            services.AddSingleton<EchoHubConnectionCounter>();
+            services.AddSingleton<ConnectionCounter>();
+
+            services.AddHostedService<HostedCounterService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
