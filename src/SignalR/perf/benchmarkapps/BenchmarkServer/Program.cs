@@ -24,14 +24,7 @@ namespace BenchmarkServer
                 .UseConfiguration(config)
                 .ConfigureLogging(loggerFactory =>
                 {
-                    //if (Enum.TryParse(config["LogLevel"], out LogLevel logLevel))
-                    //{
-                    //    loggerFactory.AddConsole().SetMinimumLevel(logLevel);
-                    //}
-                    //else if (config["EnableStdoutConnectionCounting"] != null)
-                    //{
-                        loggerFactory.AddConsole().AddFilter("Microsoft", LogLevel.Warning);
-                    //}
+                    loggerFactory.AddConsole().AddFilter("Microsoft", LogLevel.Warning);
                 })
                 .UseKestrel()
                 .UseStartup<Startup>();
