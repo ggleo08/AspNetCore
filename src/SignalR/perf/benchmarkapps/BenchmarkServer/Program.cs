@@ -16,7 +16,7 @@ namespace BenchmarkServer
             Console.WriteLine($"Process ID: {Process.GetCurrentProcess().Id}");
 
             var config = new ConfigurationBuilder()
-                .AddEnvironmentVariables(prefix: "ASPNETCORE_")
+                .AddEnvironmentVariables()
                 .AddCommandLine(args)
                 .Build();
 

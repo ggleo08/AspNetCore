@@ -10,6 +10,7 @@
     <Reference Include="Microsoft.AspNetCore.SignalR.Client" />
     <Reference Include="Microsoft.Extensions.CommandLineUtils.Sources" />
     <Reference Include="Newtonsoft.Json" />
+    <Reference Include="Microsoft.ApplicationInsights.AspNetCore" />
   </ItemGroup>
 
 </Project>

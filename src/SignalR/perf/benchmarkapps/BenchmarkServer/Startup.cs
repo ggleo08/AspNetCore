@@ -2,6 +2,8 @@
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using BenchmarkServer.Hubs;
+using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -32,9 +34,15 @@ namespace BenchmarkServer
                 signalrBuilder.AddStackExchangeRedis(redisConnectionString);
             }
 
+            TelemetryConfiguration.Active.InstrumentationKey = _config["APPLICATIONINSIGHTS_INSTRUMENTATIONKEY"];
+
+            services.AddSingleton<TelemetryClient>();
+
+            services.AddSingleton<HostMetrics>();
             services.AddSingleton<ConnectionCounter>();
 
-            services.AddHostedService<HostedCounterService>();
+            services.AddHostedService<ConnectionCounterService>();
+            services.AddHostedService<HostMetricsService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

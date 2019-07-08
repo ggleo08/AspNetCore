@@ -31,7 +31,7 @@ and are generated based on the last package release.
     <LatestPackageReference Include="IdentityServer4.Storage" Version="$(IdentityServer4StoragePackageVersion)" />
     <LatestPackageReference Include="Libuv" Version="$(LibuvPackageVersion)" />
     <LatestPackageReference Include="MessagePack" Version="$(MessagePackPackageVersion)" />
-    <LatestPackageReference Include="Microsoft.AspNet.WebApi.Client" Version="$(MicrosoftAspNetWebApiClientPackageVersion)" />
+    <LatestPackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="$(MicrosoftApplicationInsightsAspNetCore)" />
     <LatestPackageReference Include="Microsoft.AspNetCore.Analyzer.Testing" Version="$(MicrosoftAspNetCoreAnalyzerTestingPackageVersion)" />
     <LatestPackageReference Include="Microsoft.AspNetCore.AzureAppServices.SiteExtension.2.1" Version="$(MicrosoftAspNetCoreAzureAppServicesSiteExtension21PackageVersion)" />
     <LatestPackageReference Include="Microsoft.AspNetCore.AzureAppServices.SiteExtension.2.2" Version="$(MicrosoftAspNetCoreAzureAppServicesSiteExtension22PackageVersion)" />
