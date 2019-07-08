@@ -148,6 +148,7 @@
     <!-- Partner teams -->
     <MicrosoftAzureKeyVaultPackageVersion>2.3.2</MicrosoftAzureKeyVaultPackageVersion>
     <MicrosoftAzureStorageBlobPackageVersion>10.0.1</MicrosoftAzureStorageBlobPackageVersion>
+    <MicrosoftAzureSignalRPackageVersion>1.0.10</MicrosoftAzureSignalRPackageVersion>
     <MicrosoftBuildFrameworkPackageVersion>15.8.166</MicrosoftBuildFrameworkPackageVersion>
     <MicrosoftBuildUtilitiesCorePackageVersion>15.8.166</MicrosoftBuildUtilitiesCorePackageVersion>
     <MicrosoftCodeAnalysisCommonPackageVersion>2.8.0</MicrosoftCodeAnalysisCommonPackageVersion>

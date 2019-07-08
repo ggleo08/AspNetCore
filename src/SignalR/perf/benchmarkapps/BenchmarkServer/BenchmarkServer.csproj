@@ -14,6 +14,7 @@
     <Reference Include="Microsoft.AspNetCore.SignalR.Protocols.MessagePack" />
     <Reference Include="Microsoft.AspNetCore.SignalR.StackExchangeRedis" />
     <Reference Include="Microsoft.AspNetCore.Server.Kestrel" />
+    <Reference Include="Microsoft.Azure.SignalR" />
     <Reference Include="Microsoft.Extensions.Configuration.CommandLine" />
     <Reference Include="Microsoft.Extensions.Logging.Console" />
   </ItemGroup>
@@ -22,6 +23,7 @@
   <ItemGroup Condition="'$(BenchmarksTargetFramework)' != ''">
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.MessagePack" Version="$(MicrosoftAspNetCoreAppPackageVersion)" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.StackExchangeRedis" Version="$(MicrosoftAspNetCoreAppPackageVersion)" />
+    <PackageReference Include="Microsoft.Azure.SignalR" Version="$(MicrosoftAzureSignalRPackageVersion)" />
 
     <FrameworkReference Update="Microsoft.AspNetCore.App" RuntimeFrameworkVersion="$(MicrosoftAspNetCoreAppPackageVersion)" />
     <FrameworkReference Update="Microsoft.NETCore.App" RuntimeFrameworkVersion="$(MicrosoftNETCoreAppPackageVersion)" />
