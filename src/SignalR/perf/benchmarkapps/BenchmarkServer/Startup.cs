@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Azure.SignalR;
+using Microsoft.Extensions.Options;
 
 namespace BenchmarkServer
 {
@@ -17,6 +18,7 @@ namespace BenchmarkServer
         public Startup(IConfiguration configuration)
         {
             _config = configuration;
+            useAzureSignalR = configuration.GetSection("Azure:SignalR:ConnectionString").Exists();
         }
 
         public void ConfigureServices(IServiceCollection services)
