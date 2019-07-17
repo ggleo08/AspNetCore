@@ -260,6 +260,11 @@ namespace Microsoft.AspNetCore.SignalR.Crankier
             }
         }
 
+        public async Task ConnectedAsync(int id)
+        {
+            await Runner.LogAgentAsync("Agent received Connected event from Worker {0}", id);
+        }
+
         public async Task PongAsync(int id, int value)
         {
             await Runner.LogAgentAsync("Agent received pong message from Worker {0} with value {1}.", id, value);

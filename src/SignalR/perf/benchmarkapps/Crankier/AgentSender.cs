@@ -54,6 +54,14 @@ namespace Microsoft.AspNetCore.SignalR.Crankier
             await SendAsync("status", JToken.FromObject(parameters)); ;
         }
 
+        public async Task ConnectedAsync(int id) {
+            var parameters = new {
+                Id = id
+            };
+
+            await SendAsync("connected", JToken.FromObject(parameters));
+        }
+
         private async Task SendAsync(string method, JToken parameters)
         {
             await _lock.WaitAsync();

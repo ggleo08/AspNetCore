@@ -69,6 +69,8 @@ namespace Microsoft.AspNetCore.SignalR.Crankier
             }
 
             Log("Connections connected successfully");
+
+            await _agent.ConnectedAsync(_processId);
         }
 
         public Task StartTestAsync(TimeSpan sendInterval, int sendBytes)

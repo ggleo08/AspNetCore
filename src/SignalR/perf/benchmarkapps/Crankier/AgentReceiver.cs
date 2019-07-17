@@ -48,6 +48,10 @@ namespace Microsoft.AspNetCore.SignalR.Crankier
                                     message.Value["Id"].ToObject<int>(),
                                     message.Value["StatusInformation"].ToObject<StatusInformation>());
                                 break;
+                            case "connected":
+                                await _agent.ConnectedAsync(
+                                    message.Value["Id"].ToObject<int>());
+                                break;
                         }
                     }
                     catch (Exception ex)
