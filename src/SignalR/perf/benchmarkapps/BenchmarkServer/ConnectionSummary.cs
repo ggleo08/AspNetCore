@@ -9,5 +9,7 @@ namespace BenchmarkServer
         public int PeakConnections { get; set; }
 
         public int CurrentConnections { get; set; }
+
+        public int ReceivedCount { get; set; }
     }
 }

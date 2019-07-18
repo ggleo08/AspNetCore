@@ -7,6 +7,7 @@ namespace BenchmarkServer
         private int _totalConnectedCount;
         private int _peakConnectedCount;
         private int _totalDisconnectedCount;
+        private int _receivedCount;
 
         private readonly object _lock = new object();
 
@@ -21,9 +22,17 @@ namespace BenchmarkServer
                         CurrentConnections = _totalConnectedCount - _totalDisconnectedCount,
                         PeakConnections = _peakConnectedCount,
                         TotalConnected = _totalConnectedCount,
-                        TotalDisconnected = _totalDisconnectedCount
+                        TotalDisconnected = _totalDisconnectedCount,
+                        ReceivedCount = _receivedCount
                     };
                 }
+            }
+        }
+
+        public void Receive(string a) {
+            lock (_lock)
+            {
+                _receivedCount += a.Length;
             }
         }
 
